@@ -7,6 +7,26 @@
         WindowStartupLocation="CenterScreen"
         Title="Main Window" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button Height="60" Width="160" Content="Get clipboard data" Margin="5"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Click="btnClipboard_Click">
+            </Button>
+            <Button Height="60" Width="160" Content="Clear data" Margin="5" VerticalAlignment="Center"
+                    HorizontalAlignment="Center" Click="btnItemCleared_Click">
+            </Button>
+        </StackPanel>
+        <TextBox Grid.Row="1" Margin="5" Height="40"
+                 MinWidth="250"
+                 VerticalAlignment="Center" HorizontalAlignment="Stretch"
+                 KeyUp="TbQuery_OnKeyDown" x:Name="tbQuery">
+        </TextBox>
+        <ListBox x:Name="lbData" Grid.Row="2" Margin="5"></ListBox>
     </Grid>
 </Window>
